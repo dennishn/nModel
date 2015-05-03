@@ -1,0 +1,3 @@
+- Sikre query params
+- idKey, hvordan og hvorledes?
+- giver ingen mening at skulle definere en hel route hver gang?
