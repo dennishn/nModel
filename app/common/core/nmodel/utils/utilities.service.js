@@ -76,9 +76,15 @@
 			// The constructor function for the new subclass is either defined by you
 			// (the "constructor" property in your `extend` definition), or defaulted
 			// by us to simply call the parent's constructor.
+
+			// Uhm, så
 			if (protoProps && has(protoProps, 'constructor')) {
+				console.log('defined by you');
+				console.log(protoProps, staticProps)
 				child = protoProps.constructor;
 			} else {
+				console.log('defined by us');
+				console.log(protoProps, staticProps);
 				child = function(){ return parent.apply(this, arguments); };
 			}
 
@@ -116,6 +122,7 @@
 				return void 0;
 			}
 			var value = object[attribute];
+			console.log(typeof value);
 			return typeof value === 'function' ? value.call(object) : value;
 		}
 

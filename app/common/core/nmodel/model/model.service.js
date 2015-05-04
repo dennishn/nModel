@@ -37,7 +37,9 @@
 				return BaseModel.prototype.save.call(this, options);
 			},
 			url: function () {
-				return this.computeUrl(this._resolve('baseUrl'), this.attributes);
+				console.log(this.attributes);
+				//return this.computeUrl(this._resolve('baseUrl'), this.attributes);
+				return this.computeUrl(this._resolve('collection'), this.attributes);
 			},
 			getIdentifier: function () {
 				return this.get(this.identifierKey);

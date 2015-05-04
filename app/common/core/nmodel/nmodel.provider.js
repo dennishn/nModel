@@ -20,29 +20,34 @@
 		/* @ngInject */
 		this.$get = function(nModelUtils, nModelCache, $q, $http) {
 
-			console.log('Construction new model using these options: ', defaults);
-
 			var BaseModel = function (data, options) {
-				this.options = options || {};
+				this.options = options || defaults;
 
 				this.initialize.apply(this, arguments);
 			};
 
 			BaseModel.prototype.initialize = function () {
-				if (this.options.baseUrl) {
-					this.baseUrl = this.options.baseUrl;
-				} else if (this.options.url) {
+				if (this.options.url) {
 					this.url = this.options.url;
 				}
 			};
 
 			BaseModel.prototype.computeUrl = function(path, parameters) {
+				///api/{objects}/{slug}
+				console.log(this.options, parameters, path);
+
+				if(!path) {
+					throw new Error('Du skal sq sætte collection');
+				}
+ 
 				if (parameters !== undefined && typeof parameters === 'object') {
 					for (var key in parameters) {
-						path = path.replace('{'+key+'}', parameters[key]);
+						console.log(path, key, parameters[key])
+						path = path.replace(':'+key, parameters[key]);
+						console.log(path);
 					}
 				}
-
+				console.log(path);
 				return path;
 			};
 
@@ -73,6 +78,7 @@
 			};
 
 			BaseModel.prototype.sync = function (method, data, options) {
+				console.log(this._resolve('url'));
 				options = angular.extend({
 					method: method,
 					url: this._resolve('url'),
@@ -81,8 +87,6 @@
 						Accept: 'application/vnd.nodes.v1+json'
 					}
 				}, options);
-
-				console.log('fetch', this._resolve('url'));
 
 				if (options.method === 'GET' && options.data !== undefined) {
 					options.url += options.url.indexOf('?') === -1 ? '?' : '&';

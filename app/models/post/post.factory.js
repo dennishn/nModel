@@ -9,7 +9,7 @@
 	function Post(nModel) {
 
 		return nModel.extend({
-			baseUrl:'/api/posts/:id'
+			collection: 'posts/:id'
 		});
 	}
 

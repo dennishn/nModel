@@ -19,13 +19,13 @@
 
 		post.fetch()
 			.then(function(post) {
-				console.log('got post: ', post);
+				//console.log('got post: ', post);
 			})
 			.catch(function(error) {
-				console.warn('got error: ', error);
+				//console.warn('got error: ', error);
 			})
 			.finally(function() {
-				console.info('finally callback');
+				//console.info('finally callback');
 			});
 
 		activate();
