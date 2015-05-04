@@ -8,9 +8,16 @@
 	/* @ngInject */
 	function Post(nModel) {
 
-		return nModel.extend({
-			collection: 'posts/:id'
+		var Model = nModel.extend({
+			collection: 'posts/',
+			identifierKey: 'hest'
 		});
+
+		//Model.prototype.parse = function() {
+		//	console.log('yolo')
+		//}
+
+		return Model;
 	}
 
 })();

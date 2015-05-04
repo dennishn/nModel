@@ -79,12 +79,10 @@
 
 			// Uhm, så
 			if (protoProps && has(protoProps, 'constructor')) {
-				console.log('defined by you');
-				console.log(protoProps, staticProps)
+				//console.log('inherits', protoProps);
 				child = protoProps.constructor;
 			} else {
-				console.log('defined by us');
-				console.log(protoProps, staticProps);
+				//console.log('new', arguments);
 				child = function(){ return parent.apply(this, arguments); };
 			}
 
@@ -106,7 +104,7 @@
 			// Set a convenience property in case the parent's prototype is needed
 			// later.
 			child.__super__ = parent.prototype;
-
+			//console.log('final', child.prototype);
 			return child;
 		}
 
@@ -122,7 +120,6 @@
 				return void 0;
 			}
 			var value = object[attribute];
-			console.log(typeof value);
 			return typeof value === 'function' ? value.call(object) : value;
 		}
 
