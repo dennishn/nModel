@@ -1,5 +1,5 @@
 (function () {
 	'use strict';
 
-	angular.module('a', []);
+	angular.module('category', []);
 })();

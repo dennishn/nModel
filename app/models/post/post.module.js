@@ -1,5 +1,5 @@
 (function () {
 	'use strict';
 
-	angular.module('Post', ['nModel']);
+	angular.module('Post', ['js-data']);
 })();

@@ -1,42 +1,55 @@
 (function () {
 	'use strict';
 
+	/**
+	 * js-data eksempler
+	 */
+
 	angular
 		.module('index')
 		.controller('Index', Index);
 
 	/* @ngInject */
-	function Index(Post) {
+	function Index(Post, $scope, DS, $timeout) {
 		/*jshint validthis: true */
 		var vm = this;
 
-		var id = '55467187b73ad9980695e26a';
-		var comment = 'hest';
+		Post.bindAll({}, $scope, 'index.posts');
 
-		var post = new Post({
-			id: id,
-			comment: comment,
-			herp: 'derp'
-		});
-		console.log('local model: ', post, post.parse());
-		//console.log('Index Controller, A Post: ', post);
+		//Post.findAll().then(function(posts) {
+		//	vm.posts = posts;
+		//});
+		//
+		//vm.loadPost = function(id) {
+		//
+		//	var findOptions = {
+		//		bypassCache: true
+		//	};
+		//
+		//	Post.find(id).then(function(post) {
+		//		vm.singlePost = post;
+		//	});
+		//
+		//};
+		//
+		//vm.closePost = function() {
+		//	delete vm.singlePost;
+		//};
+		//
+		//vm.createPost = function() {
+		//	delete vm.singlePost;
+		//
+		//	vm.creatingPost = true;
+		//};
+		//
+		//vm.submitPost = function() {
+		//
+		//	Post.create(vm.newPost).then(function(newPost) {
+		//		console.log('new post created', Post.get(newPost.id));
+		//	});
+		//
+		//}
 
-		post.get()
-			//.then(function(post) {
-			//	console.log('got post: ', post);
-			//})
-			//.catch(function(error) {
-			//	//console.warn('got error: ', error);
-			//})
-			//.finally(function() {
-			//	//console.info('finally callback');
-			//});
-
-		activate();
-
-		function activate() {
-
-		};
-	};
+	}
 
 })();

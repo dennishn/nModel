@@ -3,21 +3,40 @@
 
 	angular
 		.module('Post')
-		.factory('Post', Post);
+		.factory('Post', PostModel);
 
 	/* @ngInject */
-	function Post(nModel) {
+	function PostModel(DS) {
 
-		var Model = nModel.extend({
-			collection: 'posts/',
-			identifierKey: 'hest'
+		return DS.defineResource({
+			name: 'posts',
+			relations: {
+				hasOne: {
+					category: {
+						localKey: 'category',
+						localField: 'hest'
+					}
+				}
+			},
+			methods: {
+				fullName: function() {
+					return this.author.first_name + ' ' + this.author.last_name;
+				}
+			},
+			beforeCreate: function(resource, data, cb) {
+
+				if(data.hasOwnProperty('tags')) {
+					data.tags = _splitTags(data.tags);
+				}
+
+				cb(null, data);
+			}
 		});
 
-		//Model.prototype.parse = function() {
-		//	console.log('yolo')
-		//}
+		function _splitTags(string) {
+			return string.split(',');
+		}
 
-		return Model;
 	}
 
 })();

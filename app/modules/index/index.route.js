@@ -12,7 +12,12 @@
 					'application@': {
 						templateUrl: 'modules/index/index.template.html',
 						controller: 'Index',
-						controllerAs: 'index'
+						controllerAs: 'index',
+						resolve: {
+							posts: function(Post) {
+								return Post.findAll({limit: 100});
+							}
+						}
 					}
 				}
 			};

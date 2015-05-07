@@ -1,0 +1,26 @@
+<form ng-submit="post.save()">
+    <div class="row">
+        <div class="small-12 columns">
+            <label>Title
+                <input type="text" ng-model="post.post.title"/>
+            </label>
+            <label>Body
+                <input type="text" ng-model="post.post.body"/>
+            </label>
+            <label>Author
+                <select ng-model="post.post.author" ng-options="user.id as user.first_name for user in post.users">
+                    <option value="">Please select</option>
+                </select>
+            </label>
+            <label>Category
+                <select ng-model="post.post.category" ng-options="category.id as category.name for category in post.categories">
+                    <option value="">Please select</option>
+                </select>
+            </label>
+            <label>Tags (comma seperated)
+                <input type="text" ng-model="post.post.tags"/>
+            </label>
+            <button type="submit">Save</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="small-6 columns">
+        <ul class="pagination">
+            <li class="arrow" ng-class="{'unavailable': posts.pagination.current === 1}">
+                <a ng-click="posts.loadPage(posts.pagination.prev)">&laquo;</a>
+            </li>
+
+            <li ng-repeat="page in posts.pagination.pages"
+                ng-class="{'current': posts.pagination.current === page}">
+                <a ng-click="posts.loadPage(page)">{{page}}</a>
+            </li>
+
+            <li class="arrow" ng-class="{'unavailable': posts.pagination.current === posts.pagination.last}">
+                <a ng-click="posts.loadPage(posts.pagination.next)">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+    <div class="small-6 columns">
+        <a ui-sref="application.posts.create">Create</a>
+    </div>
+    <div class="small-12 columns">
+        <div class="panel" ng-repeat="post in posts.posts track by post.id">
+            <h5>{{post.title}}</h5>
+            <p>By: {{post.fullName()}}</p>
+            <p>
+                <small>
+                    {{post}}
+                </small>
+            </p>
+            <a ui-sref="application.posts.single({id: post.id})">Single view</a>
+            <a ui-sref="application.posts.edit({id: post.id})">Edit view</a>
+        </div>
+    </div>
+</div>
