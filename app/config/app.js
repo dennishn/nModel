@@ -36,10 +36,11 @@
     'application',
     'index',
 	'posts',
-'nModel.pagination',
-'user',
-'category',
-'nModel.dateParser',
+	'user',
+	'category',
+	'nModel.pagination',
+	'nModel.dateParser',
+	'nModel.caseConverter'
 			/* ---> Do not delete this comment (ngImports) <--- */
 	]);
 })();

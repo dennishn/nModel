@@ -27,9 +27,10 @@
 		}
 
 		function save() {
-			Post.create(vm.post).then(function() {
-				$state.go('application.posts.index');
-			});
+			Post.create(vm.post)
+				.then(function() {
+					$state.go('application.posts.index');
+				});
 		}
 	}
 

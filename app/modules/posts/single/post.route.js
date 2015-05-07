@@ -15,12 +15,7 @@
 						controllerAs: 'post',
 						resolve: {
 							post: function(Post, Category, $stateParams) {
-								return Post.find($stateParams.id).then(function(post) {
-									return Post.loadRelations(post.category, ['category']).then(function(stuff) {
-										console.log(stuff);
-										return stuff;
-									});
-								});
+								return Post.find($stateParams.id);
 							}
 						}
 					}

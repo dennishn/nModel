@@ -3,18 +3,20 @@
 
 	angular
 		.module('nModel.dateParser')
-		.service('JsDataDateparser', JsDataDateparser);
+		.service('nModelDateparser', JsDataDateparser);
 
 	/* @ngInject */
 	function JsDataDateparser() {
 
 		var service = {
-			//method references
+			parseDate: parseDate
 		};
 
 		return service;
 
-		//function method() { };
-	};
+		function parseDate(string) {
+			return new Date(string);
+		}
+	}
 
 })();

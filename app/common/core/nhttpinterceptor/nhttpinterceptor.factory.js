@@ -17,7 +17,7 @@
 		function errorHandle(statuscode) {
 			/* Convert it so match the object with keys and errormessages in */
 			var getErrorMsg = 'error' + statuscode;
-
+			console.log(statuscode)
 			/* Message it out */
 			/* If it exists in translate, then message it, or else message the string */
 			if($rootScope.translate && $rootScope.translate[getErrorMsg]) {

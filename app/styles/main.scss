@@ -96,3 +96,10 @@
 @import "../modules/posts/edit/post";
 @import "../modules/posts/create/post";
 /* ---> Do not delete this comment (Modules) <--- */
+
+.messages__list {
+	position: fixed;
+	top: 45px;
+	right: 0;
+	list-style: none;
+}

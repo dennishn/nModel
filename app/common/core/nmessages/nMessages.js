@@ -215,7 +215,7 @@ angular.module('messages').run(['$templateCache', function($templateCache) {
 		"<div class=\"messages messages--{{hPos}}-{{vPos}}\">\n" +
 		"\t<ul class=\"messages__list\">\n" +
 		"\t\t<li ng-repeat=\"message in messages track by $index\" messages-message=\"message\">\n" +
-		"\t\t\t<span ng-bind-html=\"message.content\"></span>\n" +
+		"\t\t\t<div class=\"alert-box alert\" ng-bind-html=\"message.content\"></div>\n" +
 		"\t\t</li>\n" +
 		"\t</ul>\n" +
 		"</div>"

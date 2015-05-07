@@ -3,12 +3,29 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/.jshintrc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gruntfile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/common/core/nhttpinterceptor/nhttpinterceptor.factory.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/common/core/nmodel/js-data.caseconverter.factory.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/common/core/nmodel/js-data.caseconverter.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/common/core/nmodel/js-data.dateparser.service.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/config/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/config/config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/config/run.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/models/category/category.factory.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/models/post/post.factory.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/models/post/post.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/models/user/user.factory.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/modules/index/index.controller.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/modules/index/index.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/index/index.template.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/create/post.controller.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/edit/post.template.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/index/posts.controller.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/index/posts.template.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/posts.template.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/single/post.controller.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/single/post.route.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/modules/posts/single/post.template.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/styles/main.scss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/todo.md" charset="UTF-8" />
   </component>
 </project>

@@ -12,11 +12,26 @@
 		<!-- endbuild -->
 	</head>
 	<body ng-app="app">
-		<!--[if lt IE 9]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
 
-		<h1>app</h1>
+		<nodes-messages-wrapper></nodes-messages-wrapper>
+
+		<div class="fixed">
+			<top-bar>
+				<ul class="title-area">
+					<li class="name">
+						<h1><a ui-sref="application.index">Angular + JS-Data</a></h1>
+					</li>
+					<li toggle-top-bar class="menu-icon"><a href="#"></a></li>
+				</ul>
+
+				<top-bar-section>
+					<ul class="right">
+						<li ui-sref-active="active"><a ui-sref="application.index">Home</a></li>
+						<li ui-sref-active="active"><a ui-sref="application.posts.index">Posts</a></li>
+					</ul>
+				</top-bar-section>
+			</top-bar>
+		</div>
 
 		<!-- Application Entry: -->
 		<div ui-view="application"></div>
@@ -60,6 +75,7 @@
 		<script src="bower_components/angulartics/src/angulartics-ga.js"></script>
 		<script src="bower_components/js-data/dist/js-data.js"></script>
 		<script src="bower_components/js-data-angular/dist/js-data-angular.js"></script>
+		<script src="bower_components/js-data-schema/dist/js-data-schema.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
@@ -108,6 +124,8 @@
 <script src="models/category/category.factory.js"></script>
 <script src="common/core/nmodel/js-data.dateparser.module.js"></script>
 <script src="common/core/nmodel/js-data.dateparser.service.js"></script>
+<script src="common/core/nmodel/js-data.caseconverter.module.js"></script>
+<script src="common/core/nmodel/js-data.caseconverter.factory.js"></script>
 		<!-- endbuild -->
 </body>
 </html>

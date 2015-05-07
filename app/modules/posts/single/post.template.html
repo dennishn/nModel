@@ -1,3 +1,11 @@
-category: {{post.post.category}}
-<br/>
-{{post.post}}
+<div class="row">
+	<div class="small-12 columns">
+		<div class="panel">
+			<img ng-src="{{::post.post.cover_image}}"/>
+			<h5>{{post.post.title}}</h5>
+			<p>By: {{post.post.fullName()}}</p>
+			<p>Likes: {{post.post.likes}}</p>
+			<p>Created: {{post.post.createdDate | date: 'EEEE d MMMM yyyy'}}</p>
+		</div>
+	</div>
+</div>

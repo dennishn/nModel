@@ -16,18 +16,20 @@
         </ul>
     </div>
     <div class="small-6 columns">
-        <a ui-sref="application.posts.create">Create</a>
+        <a class="button small success right" ui-sref="application.posts.create">Create</a>
     </div>
     <div class="small-12 columns">
         <div class="panel" ng-repeat="post in posts.posts track by post.id">
             <h5>{{post.title}}</h5>
             <p>By: {{post.fullName()}}</p>
-            <p>
-                <small>
-                    {{post}}
-                </small>
-            </p>
+            <p>Likes: {{post.likes}}</p>
+			<p>Created: {{post.createdDate | date: 'EEEE d MMMM yyyy'}}</p>
+			<br/>
+			<a ng-hide="post.liked" ng-click="posts.likePost(post)">Like</a>
+			<a ng-show="post.liked" ng-click="posts.unlikePost(post)">Unlike</a>
+			<br/>
             <a ui-sref="application.posts.single({id: post.id})">Single view</a>
+			<br/>
             <a ui-sref="application.posts.edit({id: post.id})">Edit view</a>
         </div>
     </div>

@@ -13,6 +13,7 @@
 		activate();
 
 		function activate() {
+			// Classic Angular "2way binding"
 			Post.bindOne(post.id, $scope, 'post.post');
 		}
 	}

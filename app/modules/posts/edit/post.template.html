@@ -7,6 +7,14 @@
             <label>Body
                 <input type="text" ng-model="post.post.body"/>
             </label>
+			<label>Category
+				<select ng-model="post.post.category" ng-options="category.id as category.name for category in post.categories">
+					<option value="">Please select</option>
+				</select>
+			</label>
+			<label>Tags (comma seperated)
+				<input type="text" ng-model="post.post.tags"/>
+			</label>
             <button type="submit">Save</button>
         </div>
     </div>

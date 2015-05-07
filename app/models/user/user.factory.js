@@ -8,9 +8,8 @@
 	/* @ngInject */
 	function User(DS) {
 
-		return DS.defineResource({
-			name: 'users'
-		});
+		// Lightes way possible to define a model
+		return DS.defineResource('users');
 
 	}
 
